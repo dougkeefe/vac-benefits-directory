@@ -7,7 +7,7 @@ var writeKey = process.env.AIRTABLE_WRITE_KEY;
 
 var fetchTableFromAirtable = async function fetchTableFromAirtable(table) {
   var url =
-    "https://api.airtable.com/v0/appoFDwVvNMRSaO6o/" +
+    "https://api.airtable.com/v0/appqWFWrsHsTkavFG/" +
     table +
     "?maxRecords=100&view=Grid%20view";
   var resp = await fetch(url, {
