@@ -51,13 +51,17 @@ class Layout extends Component {
     );
     return (
       <div className={classnames(this.props.classes.root)}>
-        <Head t={this.props.t} />
+        <Head title={this.props.title} t={this.props.t} />
         <ErrorBoundary>
           <Content>
             <div className={classnames(this.props.classes.header)}>
               <Container>
                 <PhaseBanner alpha>{this.props.t("alpha")}</PhaseBanner>
-                <MenuBar i18n={this.props.i18n} t={this.props.t} />
+                <MenuBar
+                  i18n={this.props.i18n}
+                  t={this.props.t}
+                  showRefreshCache={this.props.showRefreshCache}
+                />
               </Container>
             </div>
             <Container role="main">{this.props.children}</Container>
@@ -83,8 +87,10 @@ Layout.propTypes = {
   children: PropTypes.object,
   classes: PropTypes.object,
   hideNoscript: PropTypes.bool,
+  showRefreshCache: PropTypes.bool,
   i18n: PropTypes.object,
-  t: PropTypes.func
+  t: PropTypes.func,
+  title: PropTypes.string
 };
 
 export default withStyles(styles)(Layout);

@@ -160,6 +160,10 @@ export class A extends Component {
     logEvent("FilterClick", criteria, id);
     let newSelectedEligibility = this.state.selectedEligibility;
     newSelectedEligibility[criteria] = id;
+    if (this.state.selectedEligibility.patronType === "organization") {
+      newSelectedEligibility.serviceType = "";
+      newSelectedEligibility.statusAndVitals = "";
+    }
     let newState = this.state;
     newState.selectedEligibility = newSelectedEligibility;
     this.setState(newState);
@@ -241,6 +245,8 @@ export class A extends Component {
             eligibilityPaths={this.props.eligibilityPaths}
             needs={this.props.needs}
             examples={this.props.examples}
+            selectedEligibility={selectedEligibility}
+            selectedNeeds={this.state.selectedNeeds}
             setUserProfile={this.setUserProfile}
             setSection={this.setSection}
             pageWidth={this.state.width}
