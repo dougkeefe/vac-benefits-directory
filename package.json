@@ -36,7 +36,7 @@
     "i18next-express-middleware": "1.0.10",
     "i18next-node-fs-backend": "1.0.0",
     "i18next-xhr-backend": "1.5.1",
-    "isomorphic-unfetch": "^2.0.0",
+    "isomorphic-unfetch": "^2.1.0",
     "jest-axe": "^3.0.0",
     "lunr": "^2.2.1",
     "next": "6.1.1",
